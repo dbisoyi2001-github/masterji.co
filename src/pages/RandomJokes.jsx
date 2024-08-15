@@ -6,7 +6,7 @@ import { FaArrowLeft, FaRetweet } from "react-icons/fa6";
 import { IoIosHeartEmpty, IoIosMore } from "react-icons/io";
 import { LuDot, LuUpload } from "react-icons/lu";
 import { MdVerified } from "react-icons/md";
-import Logo from "../../components/Logo";
+import Logo from "../components/Logo";
 
 const RandomJokes = () => {
   const [joke, setJoke] = useState("");
@@ -20,10 +20,10 @@ const RandomJokes = () => {
   const [dateTime, setDateTime] = useState("20 JULY, 2022");
 
   const fetchJoke = useCallback(async () => {
-    const url = import.meta.env.VITE_JOKES_URL;
+    // const url = import.meta.env.VITE_JOKES_URL;
     setLoading(true);
     try {
-      const response = await axios.get(url);
+      const response = await axios.get("https://api.freeapi.app/api/v1/public/randomjokes/joke/random");
       setJoke(response.data.data.content);
       setViews(generateRandomViews());
       setComments(generateRandomNumber());

@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import axios from "axios";
-import Logo from "../../components/Logo";
-import Card from "../../components/Card";
-import SkeletonCard from "../../components/SkeletonCard";
+import Logo from "../components/Logo";
+import Card from "../components/Card";
+import SkeletonCard from "../components/SkeletonCard";
 
 const CatsListing = () => {
   const carouselRef = useRef(null);
@@ -12,10 +12,10 @@ const CatsListing = () => {
 
   useEffect(() => {
     const fetchCats = async () => {
-      const url = import.meta.env.VITE_CATS_URL;
+      // const url = import.meta.env.VITE_CATS_URL;
       setLoading(true);
       try {
-        const response = await axios.get(url);
+        const response = await axios.get("https://api.freeapi.app/api/v1/public/cats?page=1&limit=6");
         setCats(response.data.data);
         setLoading(false);
       } catch (err) {

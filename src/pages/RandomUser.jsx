@@ -1,6 +1,6 @@
 import { FaArrowLeft } from "react-icons/fa6";
 import { MdRefresh } from "react-icons/md";
-import Logo from "../../components/Logo";
+import Logo from "../components/Logo";
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -17,11 +17,11 @@ const RandomUser = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const url = import.meta.env.VITE_USERS_URL
+      // const url = import.meta.env.VITE_USERS_URL
       setLoading(true);
       try {
         const response = await axios.get(
-          url
+          "https://api.freeapi.app/api/v1/public/randomusers/user/random"
         );
         const userData = response.data.data;
         setUser(userData);
