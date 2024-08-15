@@ -1,8 +1,7 @@
 MasterJi Assignment
 Machine Coding Round - 2 (React.js)
 
-live link - https://master-ji.vercel.app/
-
+live link - https://reactapitwo.vercel.app/
 ## Assignments Details
 ## Develop the react components using react and perform api integration
 
