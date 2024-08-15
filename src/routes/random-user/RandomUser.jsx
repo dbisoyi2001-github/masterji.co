@@ -17,10 +17,11 @@ const RandomUser = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
+      const url = import.meta.env.VITE_USERS_URL
       setLoading(true);
       try {
         const response = await axios.get(
-          "https://api.freeapi.app/api/v1/public/randomusers/user/random"
+          url
         );
         const userData = response.data.data;
         setUser(userData);
@@ -39,8 +40,6 @@ const RandomUser = () => {
 
     fetchUser();
   }, [fetchTrigger]);
-
-  console.log(user);
 
   const formatDate = (isoString) => {
     // Create a Date object from the ISO string
@@ -87,7 +86,7 @@ const RandomUser = () => {
                   alt="profile"
                   className="rounded-full object-cover object-center h-28 w-28 shadow"
                 />
-                <span className="absolute top-0 left-[6.2rem] text-white bg-black rounded-3xl px-1 text-[10px]">
+                <span className="absolute top-0 left-[6.2rem] text-white bg-black rounded-3xl px-1 text-[12px]">
                   {user.name.title}
                 </span>
               </div>

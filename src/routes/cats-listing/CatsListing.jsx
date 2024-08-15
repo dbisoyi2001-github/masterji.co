@@ -12,10 +12,10 @@ const CatsListing = () => {
 
   useEffect(() => {
     const fetchCats = async () => {
+      const url = import.meta.env.VITE_CATS_URL;
+      setLoading(true);
       try {
-        const response = await axios.get(
-          "https://api.freeapi.app/api/v1/public/cats?page=1&limit=6"
-        );
+        const response = await axios.get(url);
         setCats(response.data.data);
         setLoading(false);
       } catch (err) {

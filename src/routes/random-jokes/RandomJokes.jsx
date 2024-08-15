@@ -20,11 +20,10 @@ const RandomJokes = () => {
   const [dateTime, setDateTime] = useState("20 JULY, 2022");
 
   const fetchJoke = useCallback(async () => {
+    const url = import.meta.env.VITE_JOKES_URL;
+    setLoading(true);
     try {
-      setLoading(true);
-      const response = await axios.get(
-        "https://api.freeapi.app/api/v1/public/randomjokes/joke/random"
-      );
+      const response = await axios.get(url);
       setJoke(response.data.data.content);
       setViews(generateRandomViews());
       setComments(generateRandomNumber());

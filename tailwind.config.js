@@ -11,7 +11,8 @@ export default {
         'jokes': "url('/bg-2.jpg')",
       },
       fontFamily: {
-        pop: ['Poppins', 'sans-serif'], // Add your Google Font name here
+        pop: ['Poppins', 'sans-serif'],
+        serif: ['Times New Roman'] // Add your Google Font name here
       },
       boxShadow: {
         'right-bottom': '4px 4px 8px rgba(0, 0, 0, 0.2)', // Custom shadow
