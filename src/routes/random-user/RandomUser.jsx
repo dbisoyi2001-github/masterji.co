@@ -65,7 +65,7 @@ const RandomUser = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <main className="relative flex items-center justify-center h-screen w-full bg-gray-800 font-serif ">
+    <main className="relative flex items-center justify-center h-screen w-full bg-gray-800 font-serif">
       {loading ? (
         <div className="loader"> .</div>
       ) : (
